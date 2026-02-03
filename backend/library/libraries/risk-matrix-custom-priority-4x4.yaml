@@ -1,0 +1,185 @@
+urn: urn:custom:risk:library:risk-matrix-priority-4x4
+locale: fr
+ref_id: risk-matrix-priority-4x4
+name: Matrice de risque personnalisée - Système de priorité 4 niveaux
+description: Matrice de risque personnalisée avec 4 niveaux de priorité basés sur les scores de risque [1-120]
+copyright: Personnalisé
+version: 1
+publication_date: 2025-01-27
+provider: custom
+packager: custom
+translations:
+  en:
+    name: Custom Risk Matrix - 4-Level Priority System
+    description: Custom risk matrix with 4 priority levels based on risk scores [1-120]
+objects:
+  risk_matrix:
+  - urn: urn:custom:risk:matrix:priority-4x4
+    ref_id: risk-matrix-priority-4x4
+    name: Matrice de risque personnalisée - Système de priorité 4 niveaux
+    description: Matrice de risque personnalisée avec 4 niveaux de priorité basés sur les scores de risque [1-120]
+    probability:
+    - id: 0
+      abbreviation: '1'
+      name: '1 - Peu probable'
+      description: Probabilité très faible que le scénario de risque se produise
+      translations:
+        en:
+          name: '1 - Unlikely'
+          description: Very low probability that the risk scenario will occur
+      hexcolor: '#92D050'
+    - id: 1
+      abbreviation: '2'
+      name: '2 - Probable'
+      description: Probabilité faible à modérée que le scénario de risque se produise
+      translations:
+        en:
+          name: '2 - Likely'
+          description: Low to moderate probability that the risk scenario will occur
+      hexcolor: '#FFFF00'
+    - id: 2
+      abbreviation: '3'
+      name: '3 - Très probable'
+      description: Probabilité significative que le scénario de risque se produise
+      translations:
+        en:
+          name: '3 - Very likely'
+          description: Significant probability that the risk scenario will occur
+      hexcolor: '#FFC000'
+    - id: 3
+      abbreviation: '4'
+      name: '4 - Presque certain'
+      description: Probabilité élevée que le scénario de risque se produise
+      translations:
+        en:
+          name: '4 - Almost certain'
+          description: High probability that the risk scenario will occur
+      hexcolor: '#FF6600'
+    - id: 4
+      abbreviation: '5'
+      name: '5 - Certain'
+      description: Probabilité très élevée ou certaine que le scénario de risque se produise
+      translations:
+        en:
+          name: '5 - Certain'
+          description: Very high or certain probability that the risk scenario will occur
+      hexcolor: '#FF0000'
+    impact:
+    - id: 0
+      abbreviation: '1'
+      name: '1 - Mineur'
+      description: Conséquences négligeables pour l'organisation
+      translations:
+        en:
+          name: '1 - Minor'
+          description: Negligible consequences for the organization
+      hexcolor: '#92D050'
+    - id: 1
+      abbreviation: '2'
+      name: '2 - Significatif'
+      description: Conséquences significatives mais limitées pour l'organisation
+      translations:
+        en:
+          name: '2 - Significant'
+          description: Significant but limited consequences for the organization
+      hexcolor: '#FFFF00'
+    - id: 2
+      abbreviation: '3'
+      name: '3 - Important'
+      description: Conséquences substantielles pour l'organisation
+      translations:
+        en:
+          name: '3 - Important'
+          description: Substantial consequences for the organization
+      hexcolor: '#FFC000'
+    - id: 3
+      abbreviation: '4'
+      name: '4 - Critique'
+      description: Conséquences désastreuses pour l'organisation
+      translations:
+        en:
+          name: '4 - Critical'
+          description: Disastrous consequences for the organization
+      hexcolor: '#FF6600'
+    - id: 4
+      abbreviation: '5'
+      name: '5 - Catastrophique'
+      description: Conséquences sectorielles ou réglementaires au-delà de l'organisation
+      translations:
+        en:
+          name: '5 - Catastrophic'
+          description: Sector or regulatory consequences beyond the organization
+      hexcolor: '#FF0000'
+    risk:
+    - id: 0
+      abbreviation: 'P4'
+      name: 'Priorité 4 - Risque Faible [1-20['
+      description: Risque faible - Score de risque dans la plage [1-20[
+      translations:
+        en:
+          name: 'Priority 4 - Low Risk [1-20['
+          description: Low risk - Risk score in range [1-20[
+      hexcolor: '#02A45A'
+    - id: 1
+      abbreviation: 'P3'
+      name: 'Priorité 3 - Risque Modéré [20-36['
+      description: Risque modéré - Score de risque dans la plage [20-36[
+      translations:
+        en:
+          name: 'Priority 3 - Moderate Risk [20-36['
+          description: Moderate risk - Risk score in range [20-36[
+      hexcolor: '#FFA600'
+    - id: 2
+      abbreviation: 'P2'
+      name: 'Priorité 2 - Risque Elevé [36-64['
+      description: Risque élevé - Score de risque dans la plage [36-64[
+      translations:
+        en:
+          name: 'Priority 2 - High Risk [36-64['
+          description: High risk - Risk score in range [36-64[
+      hexcolor: '#FF1A00'
+    - id: 3
+      abbreviation: 'P1'
+      name: 'Priorité 1 - Risque Extrême [64-120]'
+      description: Risque extrême - Score de risque dans la plage [64-120]
+      translations:
+        en:
+          name: 'Priority 1 - Extreme Risk [64-120]'
+          description: Extreme risk - Risk score in range [64-120]
+      hexcolor: '#C00000'
+    grid:
+    # Grid mapping: probability (rows) × impact (columns) → risk level (priority)
+    # Low combinations → P4 (Risque Faible [1-20[)
+    # Medium combinations → P3 (Risque Modéré [20-36[)
+    # High combinations → P2 (Risque Elevé [36-64[)
+    # Very High combinations → P1 (Risque Extrême [64-120])
+    - - 0  # Impact 1: P4
+      - 0  # Impact 2: P4
+      - 0  # Impact 3: P4
+      - 1  # Impact 4: P3
+      - 1  # Impact 5: P3
+    - - 0  # Impact 1: P4
+      - 0  # Impact 2: P4
+      - 1  # Impact 3: P3
+      - 1  # Impact 4: P3
+      - 2  # Impact 5: P2
+    - - 0  # Impact 1: P4
+      - 1  # Impact 2: P3
+      - 1  # Impact 3: P3
+      - 2  # Impact 4: P2
+      - 2  # Impact 5: P2
+    - - 1  # Impact 1: P3
+      - 1  # Impact 2: P3
+      - 2  # Impact 3: P2
+      - 2  # Impact 4: P2
+      - 3  # Impact 5: P1
+    - - 1  # Impact 1: P3
+      - 2  # Impact 2: P2
+      - 2  # Impact 3: P2
+      - 3  # Impact 4: P1
+      - 3  # Impact 5: P1
+    translations:
+      en:
+        name: Custom Risk Matrix - 4-Level Priority System
+        description: Custom risk matrix with 4 priority levels based on risk scores [1-120]
+
